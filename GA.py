@@ -5,6 +5,8 @@ from functools import reduce
 import numpy as np
 import math 
 
+#dklasdjflksdjf
+
 #create a memeber of the population
 def individual (length , min , max) :
     return [randint(min, max) for x in range(length)]
