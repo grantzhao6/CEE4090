@@ -7,6 +7,8 @@ import math
 
 #dklasdjflksdjf
 
+#CHenguw
+
 #create a memeber of the population
 def individual (length , min , max) :
     return [randint(min, max) for x in range(length)]
