@@ -5,9 +5,9 @@ from functools import reduce
 import numpy as np
 import math 
 
-#dklasdjflksdjf
-
 #CHenguw
+
+#dklsjdfksdjflskdj 
 
 #create a memeber of the population
 def individual (length , min , max) :
