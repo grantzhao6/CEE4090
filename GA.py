@@ -5,8 +5,9 @@ from functools import reduce
 import numpy as np
 import math 
 
+print("hello")
 #CHenguw
-
+# hello
 #dklsjdfksdjflskdj 
 
 #create a memeber of the population
