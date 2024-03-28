@@ -12,7 +12,7 @@ def individual (length , min , max) :
 
 def population(count, length, min, max):
 #   Create a number of individuals (i.e. a population).
-#   count: the number of individuals in the population
+#   count: the number of individuals in the population``
 #   length: the number of values per individual
 #   min: the min possible value in an individual's list of values
 #   max: the max possible value in an individual's list of values
