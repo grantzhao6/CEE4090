@@ -1,3 +1,5 @@
+#from github
+
 from random import randint , random, choices
 from operator import add
 import matplotlib.pyplot as plt
@@ -5,10 +7,6 @@ from functools import reduce
 import numpy as np
 import math 
 
-print("hello")
-#CHenguw
-# hello
-#dklsjdfksdjflskdj 
 
 #create a memeber of the population
 def individual (length , min , max) :

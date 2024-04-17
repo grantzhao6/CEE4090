@@ -1,11 +1,14 @@
+#from github
+
 from numpy.random import rand
 import numpy as np
 from multiprocessing import Pool
 import time
 import gc
 
+
 ele_list="ABCDEFGHIJKLMNOPQRSTUVWXYZ  "
-target="ALPHA CODE X LOAD TEST MAGIC K"
+target="ALPHA CODE X LOAD TEST MAGIC K"*3
 #target="ABCDE"
 tlen=len(target)
 tlen
@@ -20,12 +23,13 @@ def gfitness_cal(dna):
     return f
 
 class gene_func:
+
     def to_char(self, x):
         return ele_list[x]
 
     def dnac(self):
         return ''.join(list(map(self.to_char, list(map(int, rand(tlen)*27)))))
-    
+
 class gene(gene_func):
 
     #fitness calculation function
@@ -38,6 +42,8 @@ class gene(gene_func):
         return f
 
 
+    
+    #manulaly create a DNA 
     def __init__(self,st=None,fit=None):
         if st==None:    
             self.dna = self.dnac()
@@ -47,9 +53,8 @@ class gene(gene_func):
             self.fit = self.fitness_cal()
         else:
             self.fit=fit
-
-
-    #NOT IMPLEMENTED
+        
+    #DNA mutation
     def mutation(self):
         pass
     
@@ -81,7 +86,6 @@ class Population:
             if i.fit>maxx:
                 maxx=i.fit
         return maxx
-    
     #create a new population
     def create_population(self,pop_size):
         self.arr=[]
@@ -93,7 +97,8 @@ class Population:
                 i+=1
                 if(i%5==0):
                     print(i," -- ",v.dna,"   ---   ",v.fit)
-
+                
+    
     def get_gene(self,pop,old_max):
         size=len(pop.arr)
         min_fitness=int(rand(1)[0]*old_max)
@@ -101,8 +106,11 @@ class Population:
             selected_gene=int(rand(1)[0]*size)
             #check if the dna quality matches the required mark or the max no of attempts have passed
             if pop.arr[selected_gene].fit>=min_fitness or i>200:
+#                 if i>200:
+#                     print("dna quality not found")
                 return pop.arr[selected_gene].dna
             
+    
     def cross_over_monte(self,old_pop,old_max,st,ed):
         dna1=self.get_gene(old_pop,old_max)
         dna2=self.get_gene(old_pop,old_max)
